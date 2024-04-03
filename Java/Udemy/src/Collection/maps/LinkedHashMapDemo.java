@@ -1,33 +1,44 @@
 
-/*It contains key-pair values.
-It can not have duplicate keys.
+/*
+The LinkedHashMap is quite similar to HashMap,
+ with an additional feature of maintaining the order of the inserted element.
+ HashMap provides an easy way to insert, delete, and search the elements,
+ but it does not provide any way to maintain and track the order of the inserted elements.
+ Here, LinkedHashmap came into the picture, which overcomes this issue.
+
+HashMap is a powerful data structure in Java used to store the key-pair values.
+It maps a value by its associated key. It allows us to store the null values and null keys.
+It is a non-synchronized class of Java collection. Whereas the LinkedHashMap is an alternative to HashMap that has the support of maintaining the order of the elements.
+
+
+It stores the values in the key-pair combination.
+It can not have duplicate elements.
 It may have one null key and multiple null values.
-It is non-synchronized.
-It does not provide a way to maintain the order of elements.
-The default capacity of the Java HashMap class is 16 with a load factor of 0.75.
+It is non synchronized.
+It provides an easy way to maintain the insertion order
+
  */
+
+
 
 package Collection.maps;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
-public class HashMapDemo {
+
+
+public class LinkedHashMapDemo {
     public static void main(String[] args) {
-        Map<String, Integer> map = new HashMap<>();
+        Map<String, Integer> map = new LinkedHashMap<>();
         map.put("John",70);
         map.put("Tom", 40);
         map.put("Harry", 30);
-        map.put("4", 15);
-        map.put("You", 35);
         Set<String> keySet = map.keySet();
         System.out.println("Keys:"+keySet);
         Collection<Integer> values = map.values();
         System.out.println("values:"+values);
         for (String key:keySet
-             ) {
+        ) {
             System.out.println("key :" + key +" , " +" values : "+ map.get(key));
         }
         // Print size and content of the Map
@@ -52,7 +63,7 @@ public class HashMapDemo {
 
             // Clearing the hash map using clear() method, clear() method in Java is used to clear and remove all of the elements or mappings from a specified HashMap
 
-           // map.clear();
+            // map.clear();
 
             // Displaying the final HashMap
             System.out.println("Finally the maps look like this: " + map);
@@ -103,71 +114,7 @@ public class HashMapDemo {
 
             // Getting the value of 10
             System.out.println("The Value is: " + map.get(40));
-
-            /*put() method of HashMap is used to insert a mapping into a map.
-             This means we can insert a specific key and the value it is mapping to into a particular map.
-             If an existing key is passed then the previous value gets replaced by the new value.
-             If a new pair is passed, then the pair gets inserted as a whole. */
-
-            //Program 1: When passing an existing key.
-
-                    // Displaying the HashMap
-            System.out.println("Initial Mappings are: " + map);
-
-            // Inserting existing key along with new value
-            Integer returned_value = (Integer)map.put( "Harry",32);
-
-            // Verifying the returned value
-            System.out.println("Returned value is: " + returned_value);
-
-            // Displaying the new map
-            System.out.println("New map is: " + map);
-
-
-            //Program 2: When passing a new key.
-
-            // Displaying the HashMap
-            System.out.println("Initial Mappings are: " + map);
-
-            // Inserting existing key along with new value
-            Integer returned_value2 = (Integer) map.put("All", 60);
-
-            // Verifying the returned value
-            System.out.println("Returned value is: " + returned_value2);
-
-            // Displaying the new map
-            System.out.println("New map is: " + map);
-
-
-            //putAll() is an inbuilt method of HashMap class that is used for the copy operation.
-            // The method copies all of the elements i.e., the mappings, from one map into another.
-            //Exception: The method throws NullPointerException if the map we want to copy from is NULL.
-
-            /*Program 1: Mapping String Values to Integer Keys.*/
-            System.out.println("Initial Mappings are: " + map);
-
-            // Creating a new hash map and copying
-            HashMap<String, Integer> new_hash_map = new HashMap<>();
-            new_hash_map.put("Man",123);
-            new_hash_map.putAll(map);
-            // Displaying the final HashMap
-            System.out.println("The new map looks like this: " + new_hash_map);
-
-            //remove() is an inbuilt method of HashMap class and is used to remove the mapping of any particular key from the map.
-            // It basically removes the values for any particular key in the Map.
-
-            // Displaying the HashMap
-            System.out.println("Initial Mappings are: " + map);
-
-            // Removing the existing key mapping
-            Integer returned_value3 = (Integer)map.remove("Harry");
-
-            // Verifying the returned value
-            System.out.println("Returned value is: "+ returned_value3);
-
-            // Displaying the new map
-            System.out.println("New map is: "+ map);
         }
-        
+
     }
 }
