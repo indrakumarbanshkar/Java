@@ -1,3 +1,5 @@
+package Attributes;
+
 public class StaticRefrenceDirectly {
     static StaticRefrenceDirectly obj;
     static{

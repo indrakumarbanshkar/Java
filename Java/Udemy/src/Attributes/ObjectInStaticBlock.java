@@ -1,3 +1,5 @@
+package Attributes;
+
 public class ObjectInStaticBlock {
     static{
         ObjectInStaticBlock obj = new ObjectInStaticBlock();

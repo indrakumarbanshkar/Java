@@ -1,3 +1,5 @@
+package Attributes;
+
 public class ObjectRefrence {
     int x;
     ObjectRefrence(){

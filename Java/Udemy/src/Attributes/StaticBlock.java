@@ -1,4 +1,4 @@
-/*  Static block runs before main method */
+package Attributes;/*  Static block runs before main method */
 
 public class StaticBlock {
     public static void main(String[] args) {

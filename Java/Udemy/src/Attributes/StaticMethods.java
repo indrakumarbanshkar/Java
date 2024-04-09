@@ -1,3 +1,5 @@
+package Attributes;
+
 public class StaticMethods {
     public static void main(String[] args) {
         StaticMethods.method1();
